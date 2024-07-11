@@ -3,14 +3,17 @@ from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from database import Base 
 
-class Usuario(Base): 
-    __tablename__  = "usuarios"
+class User(Base):
+    __tablename__ = 'users'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    username = Column(String, unique=True, nullable=False)
+    email = Column(String, unique=True, nullable=False)
+    password = Column(String, nullable=False)
+    first_name = Column(String)
+    last_name = Column(String)
+    phone_number = Column(String)
+    country = Column(String)
     
-    cedula = Column(String, primary_key=True)
-    nombres = Column(String, index=True)
-    apellidos = Column(String, index=True)
-    nacimiento = Column(DateTime, index=True)
-    direccion = Column(String, index=True)
-    correo = Column(String, index=True)
-    contraseña = Column(String, index=True)
-    tipo_id = Column(Integer, ForeignKey(tipos_usuario.Tipo_Usuario.id))
+    carts = relationship('Cart', back_populates='user')
+    likes = relationship('Like', back_populates='user')
+    purchases = relationship('Purchase', back_populates='user')
