@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #d1ae3d;
+      }
+
+      .cls-2 {
+        font-family: Amsterdam-One, Amsterdam;
+        font-size: 3.45px;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(5.55 9.6) scale(1.09 1)"><tspan x="0" y="0">N</tspan></text>
+  <path class="cls-1" d="M10.45,3.63s-.68-.03-.65.8c0,0,0-.64-.77-.66,0,0,.64-.05.62-.74,0,0,.08.67.8.6Z"/>
+</svg>
