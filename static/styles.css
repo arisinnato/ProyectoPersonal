@@ -129,15 +129,34 @@ body {
     visibility: hidden;
   }
 
-  .login-card {
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    margin: 0 20px;
-    padding: 70px 30px 44px;
-    border-radius: 20px;
-    background: rgb(24 21 36 / 66%);
-    backdrop-filter: blur(10px);
-    text-align: center;
-  }
+.login-card {
+  position: absolute;
+  width: 80%;
+  margin: 0 20px;
+  padding: 70px 30px 44px;
+  border-radius: 20px;
+  background: rgb(24 21 36 / 66%);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.login-card > h2 {
+  font-size: 36px;
+  font-weight: 400;
+  margin: 12px;
+}
+
+.login-card > h3 {
+  color: rgb(255 255 255 / 38%);
+  margin: 0 0 48px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.login-form {
+  width: 80%;
+  margin: 10;
+  display: grid;
+  gap: 16px;
+}
   
