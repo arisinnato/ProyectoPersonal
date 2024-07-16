@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Table
 from sqlalchemy.orm import relationship
-from app.database import Base
+from database import Base
 
 user_roles = Table('user_roles', Base.metadata,
     Column('user_id', Integer, ForeignKey('users.id'), primary_key=True),
@@ -16,7 +16,6 @@ class User(Base):
     first_name = Column(String)
     last_name = Column(String)
     phone_number = Column(String)
-    country = Column(String)
     roles = relationship('Role', secondary=user_roles, back_populates='users')
     carts = relationship('Cart', back_populates='user')
     likes = relationship('Like', back_populates='user')

@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.users import models, schemas
-from app.roles.models import Role
+from users import models, schemas
+from models import Role
 
 def get_users(db: Session):
     return db.query(models.User).all()
