@@ -1,17 +1,14 @@
 from fastapi import FastAPI
-from users.models import user
-from database import SessionLocal, engine 
-from sqlalchemy.orm import sessionmaker
-
-# Create the database tables
-user.Base.metadata.create_all(bind=engine)
-#product.Base.metadata.create_all(bind=engine)
+from database import engine
+from typeuser import models as role_models
+from users import models as user_models
+from typeuser.router import router as roles_router
+from users.routers import router as users_router
 
 app = FastAPI()
 
-# Include routers
-app.include_router(user.router)
+role_models.Base.metadata.create_all(bind=engine)
+user_models.Base.metadata.create_all(bind=engine)
 
-@app.get("/")
-def read_root():
-    return {"message": "Welcome to Nacre Online Store"}
+app.include_router(roles_router, prefix="/roles", tags=["roles"])
+app.include_router(users_router, prefix="/users", tags=["users"])
