@@ -1,6 +1,5 @@
 from sqlalchemy.orm import Session
 from schemas import Respuesta
-from one import transformar
 import tipos_usuario.models as models
 import tipos_usuario.schemas as schemas
 

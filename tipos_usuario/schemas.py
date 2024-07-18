@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import Union
+from schemas import Respuesta
 
 class el_Tipo_de_Usuario_Base(BaseModel):
     nombre: str

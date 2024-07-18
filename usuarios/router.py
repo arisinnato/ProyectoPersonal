@@ -58,40 +58,6 @@ def registrar_el_usuario(request: Request,
     auth_handler.registrar_el_usuario(db=db, usuario=usuario)
     return RedirectResponse(url='/', status_code=status.HTTP_303_SEE_OTHER)
 
-
-"""@router.get('/iniciar_sesion', response_class=HTMLResponse)
-def registrar_el_usuario(request: Request):
-    return templates.TemplateResponse(request=request, name="iniciarsesion.html")      
-
-@router.post('/iniciar_sesion')
-async def iniciar_sesion(request: Request, response: Response, cedula: str = Form(...), contraseña: str = Form(...),db: Session = Depends(get_db)) -> Token: 
-    usuario = await auth_handler.autenticacion_del_usuario(db, cedula, contraseña)
-    try:
-        if usuario: 
-            nombre_completo = f'{usuario.nombres} {usuario.apellidos}'
-            atoken = auth_handler.creacion_para_el_accesso_al_token(data={'cedula': usuario.cedula, 'nombre_completo': nombre_completo, 'tipo_usuario_id': usuario.tipo_id})
-            if usuario.tipo_id == 1: 
-                response = templates.TemplateResponse("success.html", 
-                    {"request": request, "nombre_completo": nombre_completo, "success_msg": "esta es la pagina de inicio",
-                    "path_route": '/home', "path_msg": "Home"})
-            elif usuario.tipo_id == 2: 
-                response = templates.TemplateResponse("success.html", 
-                    {"request": request, "nombre_completo": nombre_completo, "success_msg": "esta es la pagina de inicio",
-                    "path_route": '/home', "path_msg": "Home"})
-            else: 
-                response = templates.TemplateResponse("success.html", 
-                    {"request": request, "nombre_completo": nombre_completo, "success_msg": "esta es la pagina de inicio",
-                    "path_route": '/home', "path_msg": "Home"})
-            
-            response.set_cookie(key="Authorization", value= f"{atoken}", httponly=True)
-            return response
-        else:
-                return templates.TemplateResponse("error.html",
-                {"request": request, 'detail': 'contraseña incorrecta :v', 'status_code': 404 })
-
-    except Exception as err:
-        return templates.TemplateResponse("error.html",
-            {"request": request, 'detail': 'contraseña incorrecta :v', 'status_code': 401 })"""
         
 @router.get('/logout')
 async def logout(request: Request, response: Response):

@@ -11,4 +11,4 @@ class Product(Base):
     image_url = Column(String)
     carts = relationship('Cart', back_populates='product')
     likes = relationship('Like', back_populates='product')
-    purchase_details = relationship('PurchaseDetail', back_populates='product')
+    detailcompra = relationship('PurchaseDetail', back_populates='product')

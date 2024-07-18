@@ -7,5 +7,5 @@ class Like(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
     product_id = Column(Integer, ForeignKey('products.id'), nullable=False)
-    user = relationship('User', back_populates='likes')
+    user = relationship('Usuarios', back_populates='likes')
     product = relationship('Product', back_populates='likes')
